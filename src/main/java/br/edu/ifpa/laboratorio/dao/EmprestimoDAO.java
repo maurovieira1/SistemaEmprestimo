@@ -20,11 +20,14 @@ public class EmprestimoDAO {
 
                 stmtEquip.setInt(1, idEquipamento);
                 stmtEquip.executeUpdate();
-
-                conn.commit(); // Salva as duas operações
+                
+                  // Salva as duas operações
+                conn.commit();
                 System.out.println("Empréstimo realizado e equipamento reservado!");
             } catch (SQLException e) {
-                conn.rollback(); // Se der erro em um, cancela tudo
+                
+                // Se der erro em um, cancela tudo
+                conn.rollback(); 
                 throw e;
             }
         } catch (SQLException e) {
